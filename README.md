@@ -1,2 +1,2 @@
 # troll-ops-engine-buildspecs
-Sample buildspecs for use in https://github.com/TrollPursePublishing/troll-ops
+Sample buildspecs for use in https://github.com/TrollPursePublishing/trollpurse-ops
