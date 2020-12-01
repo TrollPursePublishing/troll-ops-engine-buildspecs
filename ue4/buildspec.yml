@@ -1,0 +1,25 @@
+version: 0.2
+
+env:
+  git-credential-helper: yes
+
+phases:
+  install:
+    commands:
+      - 'if ($Env:GIT_LFS_URI -ne "") { choco install git-lfs.install }
+  pre_build:
+    commands:
+      - '& ue4 root'
+      - '& ue4 version'
+      - 'if ($Env:GIT_LFS_URI -ne "") { git lfs fetch }
+  build:
+    commands:
+      - '& ue4 package Shipping'
+  post_build:
+    commands:
+      - '& ue4 test'
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
+  base-directory: 'dist'
