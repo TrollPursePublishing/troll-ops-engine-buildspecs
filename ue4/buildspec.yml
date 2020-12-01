@@ -6,12 +6,12 @@ env:
 phases:
   install:
     commands:
-      - 'if ($Env:GIT_LFS_URI -ne "") { choco install git-lfs.install }
+      - 'if ($Env:GIT_LFS_URI -ne "") { choco install git-lfs.install }'
   pre_build:
     commands:
       - '& ue4 root'
       - '& ue4 version'
-      - 'if ($Env:GIT_LFS_URI -ne "") { git lfs fetch }
+      - 'if ($Env:GIT_LFS_URI -ne "") { git lfs fetch }'
   build:
     commands:
       - '& ue4 package Shipping'
